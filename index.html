@@ -18,9 +18,9 @@
         <div class="right">
             <div class="right-container">
                 <form action="#" method="get">
-                    <input type="text" id="first-name" name="first-name" placeholder="First Name" pattern="[A-Za-z]{1,20}" onkeydown="checkName()" required>
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name" pattern="[A-Za-z]{1,20}" required>
                     <div id="fname-error"></div>
-                    <input type="text" name="last-name" id="last-name" placeholder="Last Name" pattern="[A-Za-z]{1,20}"onkeydown="checkName()" required>
+                    <input type="text" name="last-name" id="last-name" placeholder="Last Name" pattern="[A-Za-z]{1,20}" required>
                     <div id="lname-error"></div>
                     <input type="email" name="email" id="email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="sample@email.com" required>
                     <br>
@@ -36,8 +36,11 @@
                     <br>
                     <button id="sign-up-btn" class="sign-up" type="submit" onclick="check()">Sign up</button>
                 </form>
-                <p>Already have an account?</p>
-                <a href="#pop-up" class="button">Sign in</a>
+                <hr>
+                <div class="sign-in-sec">
+                    <p>Already have an account?</p>
+                    <a href="#pop-up" class="button">Sign in</a>
+                </div>
             </div>
         </div>
     </div>
@@ -46,8 +49,8 @@
             <h1>PEACE</h1>
             <a href="#" class="close-btn">&times;</a>
             <form action="#" method="get">
-                <input type="email" id="sn-email" name="sign-in-email" placeholder="Email" required>
-                <input type="password" name="password" id="sn-password" placeholder="Password" required>
+                <input type="email" id="sn-email" name="sign-in-email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="sample@email.com" required>
+                <input type="password" name="password" id="sn-password" placeholder="Password" minlength="8" maxlength="15" title="8 to 15 characters"  required>
                 <button type="submit" id="sign-in">Sign in</button>
             </form>
             <a class="f-btn" href="#">Forgot Password?</a>

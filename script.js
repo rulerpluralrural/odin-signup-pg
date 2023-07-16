@@ -2,7 +2,11 @@ const passwordDisplay = document.getElementById('pass-one-error');
 const confirmPassDisplay = document.getElementById('pass-two-error');
 const fNameDisplay = document.getElementById('fname-error');
 const lNameDisplay = document.getElementById('lname-error');
+const fname = document.getElementById('first-name');
+const lname = document.getElementById('last-name');
 
+fname.addEventListener('keyup', function () {checkName(fNameDisplay, this.value)})
+lname.addEventListener('keyup', function() {checkName(lNameDisplay, this.value)})
 
 function matchPass() {
     const password = document.getElementById('password').value;
@@ -31,23 +35,13 @@ function check() {
     }
 }
 
-function checkName() {
-    const firstName = document.getElementById('first-name').value
-    const lastName = document.getElementById('last-name').value
+function checkName(display, input) {
     const regName = /^[a-zA-Z]+$/;
 
-    if (!regName.test(firstName) || firstName.length < 3) {
-        fNameDisplay.textContent = '*Please enter a valid name!'
-        fNameDisplay.style.color = 'red' 
-    } 
-    if (!regName.test(lastName) || lastName.length < 3) {
-        lNameDisplay.textContent = '*Please enter a valid name!'
-        lNameDisplay.style.color = 'red'
-    }
-    if (regName.test(firstName)) {
-        fNameDisplay.textContent = ''
-    }
-    if (regName.test(lastName)) {
-        lNameDisplay.textContent = ''
+    if (!regName.test(input) || input.length < 3) {
+        display.textContent = '*Please enter a valid name!'
+        display.style.color = 'red'
+    } else if (regName.test(input)) {
+        display.textContent = ''
     }
 }
